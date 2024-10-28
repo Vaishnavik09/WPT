@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que3</title>
+</head>
+<body>
+    <script>
+        function fetchData(url, callback) {
+    console.log(`Fetching data from ${url}...`);
+
+    // Simulating a network delay
+    setTimeout(() => {
+        const response = `Response from ${url}`; // Simulated response
+        callback(response); // Call the callback with the response
+    }, 1000); // Delay of 1 second
+}
+
+// Example usage
+fetchData("https://example.com/api", (response) => {
+    console.log("Response:", response); // Log the response to the console
+});
+
+    </script>
+</body>
+</html>

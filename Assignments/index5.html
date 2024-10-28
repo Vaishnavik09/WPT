@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que 5</title>
+</head>
+<body>
+    <script>
+        function processData(response, callback) {
+    // Simulating data processing
+    const processedData = response.data.toUpperCase(); // Modify the data
+    console.log("Processed Data:", processedData); // Log the processed result
+    callback(null, processedData); // Call the callback with null error
+}
+
+// Chaining fetchData and processData with nested callbacks
+fetchData((error, response) => {
+    if (error) {
+        console.error("Error:", error); // Handle error from fetchData
+    } else {
+        processData(response, (err, processedResult) => {
+            if (err) {
+                console.error("Error processing data:", err);
+            } else {
+                console.log("Final Result:", processedResult);
+            }
+        });
+    }
+});
+
+    </script>
+</body>
+</html>

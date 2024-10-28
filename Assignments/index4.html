@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que4</title>
+</head>
+<body>
+    <script>
+        function fetchData(callback) {
+    // Simulating an asynchronous data fetch
+    setTimeout(() => {
+        // Simulate success or error
+        const success = Math.random() > 0.2; // 80% chance to succeed
+        
+        if (success) {
+            const response = { data: "Fetched data" };
+            callback(null, response); // Call with null error and response
+        } else {
+            const errorMessage = "An error occurred while fetching data.";
+            console.error(errorMessage); // Log the error
+            callback(errorMessage, null); // Call with error message
+        }
+    }, 1000);
+}
+
+    </script>
+</body>
+</html>
